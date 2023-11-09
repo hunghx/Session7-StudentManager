@@ -6,16 +6,18 @@ public class Student {
     private String phone ;
     private String address;
     private boolean sex ;
+    private int age;
 
     public Student() {
     }
 
-    public Student(int id, String name, String phone, String address, boolean sex) {
+    public Student(int id, String name, String phone, String address, boolean sex, int age) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.sex = sex;
+        this.age = age;
     }
 
     public int getId() {
@@ -58,6 +60,14 @@ public class Student {
         this.sex = sex;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -66,6 +76,7 @@ public class Student {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", sex=" + sex +
+                ", age=" + age +
                 '}';
     }
 }

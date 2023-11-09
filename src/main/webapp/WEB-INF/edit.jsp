@@ -35,6 +35,10 @@
     <input type="text" class="form-control" id="formGroupExampleInput3" value="${student.address}" name="address">
   </div>
   <div class="mb-3">
+    <label for="formGroupExampleInput5" class="form-label">Tuổi</label>
+    <input type="number" min="18" max="100" class="form-control" id="formGroupExampleInput5" value="${student.age}" name="age">
+  </div>
+  <div class="mb-3">
     <label for="formGroupExampleInput4" class="form-label">Giới tính</label>
     <select name="sex" id="formGroupExampleInput4" value="${student.sex}">
       <option value="true">Nam</option>

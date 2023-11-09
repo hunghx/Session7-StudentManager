@@ -18,6 +18,18 @@
 
 <h1>Danh sách sinh viên</h1>
 <a href="/StudentServlet?action=ADD">Thêm mới sinh viên</a>
+<form class="d-flex justify-content-between" action="/StudentServlet">
+    <input class="form-control me-2" value="${searchName}" name="searchName" type="text" placeholder="Search" >
+    <select class="form-select" name="sortFor" >
+        <option value="name" ${sortFor=="name"?"selected":""}>Tên</option>
+        <option value="age" ${sortFor=="age"?"selected":""}>Tuổi</option>
+    </select>
+    <select class="form-select"  name="sortBy" >
+        <option value="ASC" ${sortBy=="ASC"?"selected":""}>Tăng dần</option>
+        <option value="DESC" ${sortBy=="DESC"?"selected":""}>Giảm dần</option>
+    </select>
+    <input class="btn btn-outline-success" name="action" type="submit" value="SEARCH">
+</form>
 <table class="table">
     <thead>
     <tr>
@@ -25,6 +37,7 @@
         <th scope="col">Name</th>
         <th scope="col">Phone</th>
         <th scope="col">Address</th>
+        <th scope="col">Age</th>
         <th scope="col">Sex</th>
         <th scope="col" colspan="2">Action</th>
     </tr>
@@ -36,6 +49,7 @@
             <td>${c.getName()}</td>
             <td>${c.getPhone()}</td>
             <td>${c.getAddress()}</td>
+            <td>${c.getAge()}</td>
             <td>${c.isSex()?"Nam":"Nữ"}</td>
             <td><a href="/StudentServlet?action=EDIT&id=${c.id}">Edit</a></td>
             <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa không')"
